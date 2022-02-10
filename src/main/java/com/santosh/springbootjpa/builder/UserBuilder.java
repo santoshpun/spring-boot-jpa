@@ -1,6 +1,7 @@
 package com.santosh.springbootjpa.builder;
 
 import com.santosh.springbootjpa.dto.request.UserRequest;
+import com.santosh.springbootjpa.dto.response.DepartmentResponse;
 import com.santosh.springbootjpa.dto.response.UserResponse;
 import com.santosh.springbootjpa.model.Department;
 import com.santosh.springbootjpa.model.User;
@@ -29,7 +30,13 @@ public class UserBuilder {
         userResponse.setId(user.getId());
         userResponse.setUsername(user.getUsername());
         userResponse.setName(user.getName());
-        userResponse.setDepartmentId(user.getDepartment().getId());
+
+        DepartmentResponse departmentResponse = DepartmentResponse.builder()
+                .id(user.getDepartment().getId())
+                .name(user.getDepartment().getName())
+                .build();
+
+        userResponse.setDepartment(departmentResponse);
         return userResponse;
     }
 

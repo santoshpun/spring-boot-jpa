@@ -10,16 +10,17 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "department")
-public class Department {
+@Table(name = "project_type")
+public class ProjectType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "name", nullable = false, length = 255)
-    private String name;
 
-    public Department(Integer id) {
+    @Column(name = "type", nullable = false, length = 50)
+    private String type;
+
+    public ProjectType(int id) {
         this.id = id;
     }
 }
