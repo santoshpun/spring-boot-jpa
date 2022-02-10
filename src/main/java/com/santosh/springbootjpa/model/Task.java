@@ -24,7 +24,7 @@ public class Task {
     @Column(name = "summary", nullable = false, length = 50)
     private String summary;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", name = "description")
     private String description;
 
     @Column(name = "percentage_complete", nullable = false)
@@ -39,7 +39,7 @@ public class Task {
     private Date createdDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "last_modified_date", nullable = false)
+    @Column(name = "last_modified_date")
     private Date lastModifiedDate;
 
     @JoinColumn(name = "reporter_id", referencedColumnName = "id")

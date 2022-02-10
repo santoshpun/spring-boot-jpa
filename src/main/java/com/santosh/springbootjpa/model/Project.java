@@ -27,7 +27,7 @@ public class Project {
     @Column(name = "name", nullable = false, length = 50)
     private String name;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", name = "description")
     private String description;
 
     @Column(name = "percentage_complete", nullable = false)
@@ -38,7 +38,7 @@ public class Project {
     private Date addedDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "last_modified_date", nullable = false)
+    @Column(name = "last_modified_date")
     private Date lastModifiedDate;
 
     @Temporal(TemporalType.TIMESTAMP)
