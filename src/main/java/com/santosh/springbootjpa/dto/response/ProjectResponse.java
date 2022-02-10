@@ -13,6 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class ProjectResponse {
     private int id;
+    private String code;
     private String name;
     private String description;
     private Date startDate;

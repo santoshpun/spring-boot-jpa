@@ -17,7 +17,7 @@ public class ProjectBuilder {
 
     public static Project convertToProject(ProjectRequest projectRequest) {
         Project project = new Project();
-        project.setCode(RandomGenerator.randomCharacters());
+        project.setCode(RandomGenerator.randomCharacters().toUpperCase());
         project.setName(projectRequest.getName());
         project.setDescription(projectRequest.getDescription());
         project.setStartDate(projectRequest.getStartDate());
@@ -34,6 +34,7 @@ public class ProjectBuilder {
     public static ProjectResponse convertToProjectResponse(Project project) {
         ProjectResponse projectResponse = new ProjectResponse();
         projectResponse.setId(project.getId());
+        projectResponse.setCode(projectResponse.getCode());
         projectResponse.setName(project.getName());
         projectResponse.setDescription(project.getDescription());
         projectResponse.setStartDate(project.getStartDate());
