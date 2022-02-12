@@ -56,6 +56,14 @@ public class DepartmentController {
         return new ResponseEntity<>(department, HttpStatus.OK);
     }
 
+    @GetMapping(value = "query")
+    public ResponseEntity<DepartmentResponse> getDepartmentByQueryParam(@RequestParam("id") int id) {
+
+        DepartmentResponse department = departmentService.getDepartment(id);
+
+        return new ResponseEntity<>(department, HttpStatus.OK);
+    }
+
     @Operation(summary = "This is to delete the department in the database")
     @DeleteMapping("/{id}")
     public ResponseEntity<BaseResponse> deleteDepartment(@PathVariable("id") int id) {
